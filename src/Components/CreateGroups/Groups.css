@@ -1,0 +1,10 @@
+.Group-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    flex: 0.8;
+    height: 5rem;
+    padding: 10px;
+}
+

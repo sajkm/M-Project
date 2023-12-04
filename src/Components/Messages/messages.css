@@ -1,0 +1,10 @@
+.self-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.msgbox{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 202, 0, 0.232);
+}

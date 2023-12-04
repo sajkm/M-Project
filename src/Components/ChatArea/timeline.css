@@ -1,0 +1,33 @@
+.timeline{
+    display: flex;
+    flex-direction: column;
+    flex: 0.8;
+}
+
+.Header{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    height: 4rem;
+}
+
+.Messages{
+    padding: 5px;
+    margin: 5px;
+    flex: 1;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.Messages::-webkit-scrollbar{
+    display: none;
+}
+
+.Text{
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+}
