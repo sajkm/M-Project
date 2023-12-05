@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './sidebar.css'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
@@ -9,33 +9,33 @@ import SearchIcon from '@mui/icons-material/Search';
 import { IconButton } from '@mui/material';
 import Conversation from '../Conversations/Conversation';
 import { useNavigate } from 'react-router-dom';
+import { getAllFriendsAPI } from '../../Service/allAPI';
 
 function Sidebar() {
 
   const navigate = useNavigate();
-  const [conversation,setConversation] = useState([
-    { 
-    name:"John Doe",
-    message:"Hello",
-    timestamp:'today'
-    },
-    { 
-      name:"John Doe",
-      message:"Hello",
-      timestamp:'today'
-    },
-    { 
-      name:"John Doe",
-      message:"Hello",
-      timestamp:'today'
-    },
-    { 
-      name:"John Doe",
-      message:"Hello",
-      timestamp:'today'
+  const [allfriends,setAllFriends] = useState([])
+  
+  const getAllFriends = async () => {
+    const searchKey = "";
+    try {
+      let res = await getAllFriendsAPI(searchKey);
+      if (res.status === 200) {
+        setAllFriends(res.data);
+      } else {
+        console.error(`Error: Unexpected status code ${res}`);
+        // You might want to show an error message to the user or perform other error handling actions.
+      }
+    } catch (error) {
+      console.error('Error:', error.message);
+      // You might want to show an error message to the user or perform other error handling actions.
     }
-  ])
- 
+  };
+
+  useEffect(()=>{
+    getAllFriends();
+  },[])
+  console.log(allfriends);
   return (
     <div className='sidebar '>
         <div className='S-header'>
@@ -65,7 +65,7 @@ function Sidebar() {
                 <input className='searchbox' type="text" placeholder='Search'/>
             </div>
             <div className='chats'>
-              {conversation.map((conversation)=>{
+              {allfriends.map((conversation)=>{
                 return <Conversation conversation={conversation} />
               })
                 }

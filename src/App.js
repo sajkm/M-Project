@@ -11,9 +11,9 @@ import Groups from './Components/CreateGroups/Groups';
 function App() {
   return (
     <div className="App">
-      {/* <Home/> */}
       <Routes>
         <Route path="/login" element={<Login />}/> 
+        <Route path='/' element={<Login register/>} />
         <Route path="app" element={<Home />}> 
           <Route path='welcome' element={<Welcome/>}></Route>
           <Route path='timeline' element={<Timeline/>}></Route>
@@ -22,7 +22,6 @@ function App() {
           <Route path='create-grp' element={<Groups/>}></Route>
         </Route>
       </Routes>
-      {/* <Login/> */}
     </div>
   );
 }

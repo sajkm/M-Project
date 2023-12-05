@@ -6,7 +6,7 @@ import SendIcon from '@mui/icons-material/Send';
 import Others from '../Messages/Others';
 import Self from '../Messages/Self';
 
-function Timeline({conversation}) {
+function Timeline() {
   return (
     <div className='timeline'>
       <div className='Header shadow rounded'>
