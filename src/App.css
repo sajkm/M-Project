@@ -1,38 +1,78 @@
-*{
-  margin: 0px;
-}
-.App{
-  background-color: rgb(116, 169, 234);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-@media only screen and (max-width:40em) {
-  .container{
-    display: none;
-  }
-  .timeline{
-    flex: 1;
-  }
-  .home{
+.App {
+    text-align: center;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    background-color: #272848;
     height: 100vh;
-    width: 100vw;
-  }
-  .l-container{
-    height: 80vh;
-  }
-  .Welcome-Container{
-    flex: 1;
-    margin-right: 10px;
-  }
-  .User-container{
-    flex: 1;
-  }
-  .Group-container{
-    flex: 1;
-  }
+}
 
+main {
+    min-height: 65vh;
+}
 
+.btn-primary {
+    background-color: #6c6d84;
+    border-color: #6c6d84;
+}
+
+.btn-primary:hover {
+    background-color: #272848;
+    border-color: #6c6d84;
+    border: 1px solid white;
+}
+
+.btn-light {
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+
+.btn-light:hover {
+    background-color: transparent;
+    color: white;
+    border: none;
+    box-shadow: none;
+}
+
+.navbar {
+    background-color: #6c6d84;
+}
+
+.btn-danger {
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid #6c6d84;
+}
+
+.btn-danger:hover {
+    background-color: #272848;
+    border: 1px solid #272848;
+}
+
+footer {
+    background-color: #6c6d84;
+    position: relative;
+    bottom: 0;
+}
+
+.container-fluid a {
+    color: #ffffff;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.custom-list {
+    background-color: #6c6d84;
 }
